@@ -39,6 +39,17 @@ export interface DockerImageAssetProps extends assets.CopyOptions {
    * @default - no target
    */
   readonly target?: string;
+
+  /**
+   * Custom dockerfile location within the build context.
+   *
+   * Path should be relative to the build context (directory) location:
+   * If you pass `{ directory: 'my-dir', dockerfile: 'my-custom' }` then
+   * it will look for ./my-dir/my-custom/Dockerfile.
+   *
+   * @default - will look for Dockerfile inside `directory`
+   */
+  readonly dockerfile?: string;
 }
 
 /**
